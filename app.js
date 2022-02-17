@@ -29,6 +29,7 @@ function notFound (req, res) {
 }
 
 /*
+Andere mannier van routes plaatsen
 app.get('/', (req, res) => {
     res.status(200).send('<h1>200! Hello world</h1>');
 });
@@ -37,3 +38,8 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`server running on port: ${PORT}`)
 }) 
+
+/* linkjes
+https://handlebarsjs.com/installation/#npm-or-yarn-recommended
+https://expressjs.com/
+*/
