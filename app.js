@@ -1,24 +1,39 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 1337;
 
-app.all('/', (req, res) => {
+app.get('/', onHome);
+app.get('/', onAbout);
+app.get('/', onRegister);
+app.get('/', onLogin);
+app.get('*', notFound)
+
+function onHome (req, res) {
+    res.send('<h1>home</h1>');
+}
+
+function onAbout (req, res) {
+    res.send('<h1>About</h1>');
+}
+
+function onRegister (req, res) {
+    res.send('<h1>Register</h1>');
+}
+
+function onLogin (req, res) {
+    res.send('<h1>Login</h1>');
+}
+
+function notFound (req, res) {
+    res.send('<h1>404 page not found</h1>');
+}
+
+/*
+app.get('/', (req, res) => {
     res.status(200).send('<h1>200! Hello world</h1>');
 });
+*/
 
-app.all('/about', (req, res) => {
-    res.status(200).send('<h1>200! about</h1>');
-});
-
-app.all('/register', (req, res) => {
-    res.status(200).send('<h1>200! register</h1>');
-});
-
-app.all('/login', (req, res) => {
-    res.status(200).send('<h1>200! login</h1>');
-});
-
-app.all('*', (req, res) => {
-    res.status(404).send('<h1>404! Page not found</h1>');
-});
-
-app.listen(3000)
+app.listen(PORT, () => {
+    console.log(`server running on port: ${PORT}`)
+}) 
