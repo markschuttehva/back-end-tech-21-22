@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "comments": "app.js is hoe je het bestand moet openen"
+    "dev": "nodemon app.js",
+    "comments": "app.js is hoe je het bestand moet openen, dev is voor development"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,8 @@
   },
   "homepage": "https://github.com/markschuttehva/back-end-tech-21-22#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "chalk": "^5.0.0",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
   }
 }
