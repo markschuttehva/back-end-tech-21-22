@@ -1,8 +1,16 @@
-import chalk from 'chalk';
+const express = require('express')
+const app = express()
 
-const express = require('express');
-const app = express();
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
 
-console.log(chalk.blue('Hello world!'));
+app.get('/about', function (req, res) {
+    res.send('about')
+})
 
-console.log('yo het werkt');
+app.get('/register', function (req, res) {
+    res.send('register')
+})
+
+app.listen(3000)
