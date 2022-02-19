@@ -1,11 +1,31 @@
 body {
-    background-color: red;
-    color: aqua;
-}
-h1 {
-    background-color: black;
+    background: url(../images/bg.jpg) no-repeat center center fixed; 
 }
 
-p {
-    color: yellowgreen;
+h1 {
+    color: white;
+    padding: 1em 0em 0em 0em;
+}
+
+/* login */
+.login {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 45%;
+    margin: auto;
+}
+
+input {
+    border: none;
+    border-bottom: solid red;
+    border-bottom-width: 0.2em;
+    width: 16em;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    display: block;
+    margin: 1em auto;
+}
+
+main form:nth-child(4) {
+    padding-bottom: 1em;
 }

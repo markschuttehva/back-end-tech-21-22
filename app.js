@@ -35,6 +35,10 @@ function onHome (req, res) {
     res.render("main");
 }
 
+function onLogin (req, res) {
+    res.render('login');
+}
+
 function onAbout (req, res) {
     res.send('<h1>About</h1>');
 }
@@ -43,9 +47,7 @@ function onRegister (req, res) {
     res.send('<h1>Register</h1>');
 }
 
-function onLogin (req, res) {
-    res.send('<h1>Login</h1>');
-}
+
 
 function notFound (req, res) {
     res.send('<h1>404 page not found</h1>');
