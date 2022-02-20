@@ -40,14 +40,12 @@ function onLogin (req, res) {
 }
 
 function onAbout (req, res) {
-    res.send('<h1>About</h1>');
+    res.render('about');
 }
 
 function onRegister (req, res) {
-    res.send('<h1>Register</h1>');
+    res.render('register');
 }
-
-
 
 function notFound (req, res) {
     res.send('<h1>404 page not found</h1>');
