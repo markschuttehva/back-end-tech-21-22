@@ -1,0 +1,1 @@
+//function to check the values of the input field (register form and login)
