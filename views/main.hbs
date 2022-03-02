@@ -1,18 +1,30 @@
-
-<h1>Welcome to the site!</h1>
-<h1>Select your favorite starter pokemon!</h1>
-<section class="select">
-    <img src="images/bulbasaur.png" alt="bulbasaur">
-    <img src="images/Charmander.png" alt="charmander">
-    <img src="images/squirtle.png" alt="squirtle">
+<!-- if user is logged in than remove:-->
+<section class="info">
+<h1>Welcome to the Pokemon matching site!</h1>
+<p>Get a match based on your favourite starter Pokemon!</p>
+<p><a href="register.hbs"><b>Register</b></a> or <a href="register.hbs"><b>login</b></a> to continue</p>
 </section>
-<h2>To see a match please login!</h2>
-<h2>Example</h2>
-bulbasaur
-Ash, Jessie
 
-charmander
-Blaze, Ash, James
+<!--if user is logged in only show matches-->
 
-squirtle
-Misty, Ash, Giovannie
+<h2>Matches</h2>
+<section class="matches">
+    <section class="match">
+        <img src="images/ash.jpg" alt="Ash">
+        <h3>Ash</h3>
+        <p>24</p>
+        <p>Pallettown</p>
+    </section>
+    <section class="match">
+        <img src="images/jessie.png" alt="Jessie">
+        <h3>Jessie</h3>
+        <p>36</p>
+        <p>Viridian City</p>
+    </section>
+    <section class="match">
+        <img src="images/misty.jpg" alt="Misty">
+        <h3>Misty</h3>
+        <p>25</p>
+        <p>Cerulean City</p>
+    </section>
+</section>
