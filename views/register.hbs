@@ -1,12 +1,17 @@
+    <head>
+        <script defer src="/controllers/register.js"></script>
+    </head>
     <h1>Register</h1>
-    <form action="">
-        <input type="email" name="" id="" placeholder="Email">
-        <input type="date" name="" id="" min="2000-01-01" placeholder="dd-mm-jjjj">
-        <input type="password" name="" id="" placeholder="password">
-        <input type="password" name="" id="" placeholder="password">
+    <h2 id="error"></h2>
+    <form action="" method="get" id="form">
+        <input type="email" name="" id="email" placeholder="Email">
+        <input type="date" name="" id="date" min="2000-01-01" placeholder="dd-mm-jjjj">
+        <input type="password" name="" id="password" placeholder="password">
+        <input type="password" name="" id="password2" placeholder="password">
+        <section>
+            <label for="bulbasaur"><input type="radio" name="pokemon" value="bulbasaur" id="bulbasaur"><img src="images/bulbasaur.png" alt="bulbasaur"></label>
+            <label for="charmander"><input type="radio" name="pokemon" value="charmander" id="charmander"><img src="images/Charmander.png" alt="charmander"></label>
+            <label for="squirtle"><input type="radio" name="pokemon" value="squirtle" id="squirtle"><img src="images/squirtle.png" alt="squirtle"></label>
+        </section>
+        <button type="submit">Register</button>
     </form>
-<section class="select">
-    <img src="images/bulbasaur.png" alt="bulbasaur">
-    <img src="images/Charmander.png" alt="charmander">
-    <img src="images/squirtle.png" alt="squirtle">
-</section>

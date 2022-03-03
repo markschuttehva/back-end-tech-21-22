@@ -56,8 +56,8 @@ main form:nth-child(4) {
     padding-bottom: 1em;
 }
 
-.select img:nth-child(odd) {
-    width: 12em;
+label img {
+    max-height: 10em;
 }
 
 .matches {
@@ -97,8 +97,8 @@ header ul li {
 
 header {
 	position: sticky;
-top: 0;
-background-color: rgba(255,255,255,0.2);
+	top: 0;
+	background-color: rgba(255,255,255,0.2);
 }
 
 a {
@@ -114,6 +114,30 @@ a {
 	margin-top: 2em;
 }
 
+input[type="text"], input[type="password"] {
+	color: black;
+}
+
+.select {
+	display: table;
+	width: 100%;
+}
+
+.select label {
+	float: left;
+	width: 33.33%;
+	position: relative;
+	left: 10%;
+}
+
+input[type="radio"] {
+	visibility: hidden;
+	display: inline;
+}
+
+:checked {
+	border: 1em solid white;
+}
 
 /*footer*/
 .container {
