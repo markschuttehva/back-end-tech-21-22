@@ -2,16 +2,26 @@
         <script defer src="/controllers/register.js"></script>
     </head>
     <h1>Register</h1>
-    <h2 id="error"></h2>
-    <form action="" method="get" id="form">
-        <input type="email" name="" id="email" placeholder="Email">
-        <input type="date" name="" id="date" min="2000-01-01" placeholder="dd-mm-jjjj">
-        <input type="password" name="" id="password" placeholder="password">
-        <input type="password" name="" id="password2" placeholder="password">
-        <section>
-            <label for="bulbasaur"><input type="radio" name="pokemon" value="bulbasaur" id="bulbasaur"><img src="images/bulbasaur.png" alt="bulbasaur"></label>
-            <label for="charmander"><input type="radio" name="pokemon" value="charmander" id="charmander"><img src="images/Charmander.png" alt="charmander"></label>
-            <label for="squirtle"><input type="radio" name="pokemon" value="squirtle" id="squirtle"><img src="images/squirtle.png" alt="squirtle"></label>
+    <form action="/register" method="POST" id="form">
+        <input type="email" name="" id="email" placeholder="Email" required>
+        <input type="date" name="" id="date" min="2000-01-01" placeholder="dd-mm-jjjj" required>
+        <input type="password" name="" id="password" placeholder="password" required>
+        <input type="password" name="" id="password2" placeholder="password" required>
+        <section class="select">
+            <h2>Select a pokemon</h2>
+            <input type="radio" name="pokemon" value="bulbasaur" id="bulbasaur">
+            <label for="bulbasaur">
+                <img src="images/bulbasaur.png" alt="bulbasaur">
+            </label>
+            <input type="radio" name="pokemon" value="charmander" id="charmander">
+            <label for="charmander">
+                <img src="images/Charmander.png" alt="charmander">
+            </label>
+            <input type="radio" name="pokemon" value="squirtle" id="squirtle">
+            <label for="squirtle">
+                <img src="images/squirtle.png" alt="squirtle">
+            </label>     
         </section>
-        <button type="submit">Register</button>
+        <button type="submit" class="submit">Register</button>
     </form>
+    <a href="/login">Login</a>

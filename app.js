@@ -5,16 +5,24 @@
 /* routes*/
 const express = require('express');
 const app = express();
+const bcrypt = require('bcrypt');
+/* bcrypt voor het versleutelen van wachtwoorden*/
 /*
 https://www.youtube.com/watch?v=hh45sR9WNH8&ab_channel=ChristianHur
 https://github.com/ChristianHur/152-150-Web-Programming-2/tree/master/unit6
 */
 const exphbs = require('express-handlebars').engine; 
 
+/* Port leet \,,/ (^.^) \,,/ */
 const PORT = process.env.PORT || 1337;
 
 /* voor de statische bestanden zoals css en afbeeldingen */
 app.use(express.static(__dirname + "/public"));
+
+// voor het versturen van gegevens */
+app.use(express.urlencoded({ extended: false}))
+
+const users = [];
 
 /* handlebars settings */
 app.set('view engine', "hbs");
@@ -31,8 +39,11 @@ app.get('/register', onRegister);
 app.get('/login', onLogin);
 app.get('*', notFound)
 
+app.post('/register', async, onRegister);
+app.post('/login', onlogin);
+
 function onHome (req, res) {
-    res.render("main");
+    res.render("main", {name: 'Mark', pokemon: 'Charmander'});
 }
 
 function onLogin (req, res) {
@@ -45,6 +56,20 @@ function onAbout (req, res) {
 
 function onRegister (req, res) {
     res.render('register');
+    try {
+        /* hashed password, password wordt 10 gehashed door await */
+        const hashedPassword = await bcrypt.hash(req.body.password, 10); 
+        users.push({
+            /* Haalt de gegevens uit het formulier en plaatst deze in de users array */
+            name: req.body.name,
+            email: req.body.email,
+            password: hashedPassword,
+            pokemon: req.body.pokemon
+        });
+        res.redirect('/login');
+    } catch {
+        res.redirect('/register');
+    }
 }
 
 function notFound (req, res) {

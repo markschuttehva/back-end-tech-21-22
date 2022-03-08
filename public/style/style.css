@@ -13,6 +13,7 @@ h1 {
     color: white;
     padding: 1em 0em 0em 0em;
 	font-size-adjust: 1;
+	text-align: center;
 }
 
 /* login */
@@ -96,7 +97,7 @@ header ul li {
 }
 
 header {
-	position: sticky;
+	/* position: sticky; */
 	top: 0;
 	background-color: rgba(255,255,255,0.2);
 }
@@ -114,29 +115,41 @@ a {
 	margin-top: 2em;
 }
 
-input[type="text"], input[type="password"] {
-	color: black;
-}
-
 .select {
-	display: table;
+	display: flex;
 	width: 100%;
-}
-
-.select label {
-	float: left;
-	width: 33.33%;
-	position: relative;
-	left: 10%;
+	justify-content: center;
+	margin-top: 4em;
 }
 
 input[type="radio"] {
 	visibility: hidden;
-	display: inline;
+	display: none;
+	position: relative;
 }
 
-:checked {
-	border: 1em solid white;
+.submit {
+	width: 10em;
+	margin: auto;
+	display: block;
+	background-color: #545454;
+	border: #545454;
+}
+
+input:checked + label{
+	border: 0.5em solid gold;
+	margin-bottom: 1em;
+	transform: translateY(-2em);
+}
+
+label{
+	margin: 0em 2em 0em 0em;
+}
+
+input:checked + label img {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
 }
 
 /*footer*/
@@ -156,7 +169,7 @@ footer{
     padding: 2em;
 	margin-top: 2em;
 	display: flex;
-	position: sticky;
+	/* position: sticky; */
 	bottom: 0;
 	left: 0;
 	right: 0;
