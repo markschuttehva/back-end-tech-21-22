@@ -21,9 +21,10 @@ app.use(express.urlencoded({ extended: false}))
 const users = [];
 
 /* mongoose en mongodb voor een database connectie */
-if (process.env.NODE_ENV !== 'production'){
+if (process.env.NODE_ENV !== 'production') {
     require('dotenv').parse();  
 }
+ 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
 const db = mongoose.connection;
@@ -62,27 +63,27 @@ function onAbout (req, res) {
 
 function onRegister (req, res) {
     res.render('register');
-    res.name
+    //res.name
 }
 
 /* async wordt gebruikt omdat het een await bevat hierdoor kan het verder met de code*/ 
 async function onRegister (req, res) {
     //res.render('register');
-    try {
-        /* hashed password, password wordt 10 gehashed door await */
-        const hashedPassword = await bcrypt.hash(req.body.password, 10); 
-        users.push({
-            /* Haalt de gegevens uit het formulier en plaatst deze in de users array (name in het form)*/
-            name: req.body.name,
-            email: req.body.email,
-            password: hashedPassword,
-            pokemon: req.body.pokemon
-        });
-        res.redirect('/login');
-    } catch {
-        res.redirect('/register');
-    }
-    console.log(users);
+    // try {
+    //     /* hashed password, password wordt 10 gehashed door await */
+    //     const hashedPassword = await bcrypt.hash(req.body.password, 10); 
+    //     users.push({
+    //         /* Haalt de gegevens uit het formulier en plaatst deze in de users array (name in het form)*/
+    //         name: req.body.name,
+    //         email: req.body.email,
+    //         password: hashedPassword,
+    //         pokemon: req.body.pokemon
+    //     });
+    //     res.redirect('/login');
+    // } catch {
+    //     res.redirect('/register');
+    // }
+    // console.log(users);
 }
 
 function notFound (req, res) {
