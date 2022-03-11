@@ -35,7 +35,7 @@ npm run dev
 
 ## License
 ```
-[Mit](./LICENSE.txt) voor de licentie
+[Mit](/LICENSE) License
 ```
 
 ## Front-End
