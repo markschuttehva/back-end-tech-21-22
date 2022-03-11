@@ -37,8 +37,35 @@ const userSchema = new Schema({
     password: String,
     pokemon: String
 });
-
 const User = mongoose.model('User',userSchema);
+
+/* inloggen */
+const session = require('express-session');
+const path = require('path');
+
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}))
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'static')));
+app.use((req, res, next) => {
+    //wanneer je op de site komt en de route is gelijk aan register of login
+    if (req.path === "/login" || req.path === "/register") {
+        next();
+    } 
+     //wanneer er niets staat in de session (wanneer er een gebruiker niet ingelogd is of andere pagina bereikt heeft)
+    else if (req.session.user === undefined){
+        res.redirect('/login');
+    } else {
+        next();
+    }
+
+})
 
 /* handlebars settings */
 app.set('view engine', "hbs");
@@ -56,10 +83,30 @@ app.get('/login', onLogin);
 app.get('*', notFound)
 
 app.post('/register', onPostRegister);
-app.post('/login', onLogin);
+app.post('/login', onPostLogin);
+
+async function onPostLogin(req, res) {
+    /*ingevoerde velden (client) */    
+    const email = req.body.email;
+    console.log(email);
+    const password = req.body.password;
+    console.log(password);
+    const currentUser = await User.findOne({email: email})
+    console.log(currentUser);
+    //terug hasehen van bycript wachtwoord in database
+    bcrypt.compare(password, currentUser.password, (err, result) =>{
+        if(result === true) {
+            console.log('succes');
+            req.session.user = currentUser;
+            res.redirect('/')
+        } else {
+            res.redirect('/login')
+        }
+    }) 
+}
 
 function onHome (req, res) {
-    res.render("main", {name: 'Mark', pokemon: 'Charmander'});
+    res.render("main", {name: req.session.user.name, pokemon: req.session.user.pokemon});
 }
 
 function onLogin (req, res) {
