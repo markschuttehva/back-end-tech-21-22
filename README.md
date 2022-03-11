@@ -5,11 +5,13 @@ This is the back-end repo for my block tech project. In this project you can reg
 This site is about searching for someone that likes the same starter pokemon.
 You can pick between the first gen starter pokemons (Bulbasaur, Charmander and Squirtle).
 
+<section float="left">
 <img src="/public/images/bulbasaur.png" width="150" alt="Bulbasaur">
 <img src="/public/images/Charmander.png" width="150" alt="Charmander">
 <img src="/public/images/squirtle.png" width="150" alt="Squirtle">
+</section>
 
-This project has been made with HTML, CSS and Javascript
+This project has been made with HTML (Handlebars), CSS and Javascript
 
 ## Install guide
 To install this project:
