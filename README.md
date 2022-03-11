@@ -9,7 +9,10 @@ You can pick between the first gen starter pokemons (Bulbasaur, Charmander and S
 <img src="/public/images/squirtle.png" width="150" alt="Squirtle">
 </section>
 
-This project has been made with HTML (Handlebars), CSS and Javascript
+### Build with
+- HTML (Handlebars)
+- CSS 
+- Javascript
 
 ## Install guide
 To install this project:
@@ -35,7 +38,7 @@ npm run dev
 
 ## License
 ```
-[Mit](/LICENSE) License
+Distributed under the [Mit](/LICENSE). See LICENSE.txt for more information.
 ```
 
 ## Front-End
