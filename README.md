@@ -4,9 +4,9 @@ _ Back end repo for block tech 2021-2022 _
 This is the back-end repo for my block tech project. In this project you can register and login to my site.
 This site is about searching for someone that likes the same starter pokemon.
 You can pick between the first gen starter pokemons (Bulbasaur, Charmander and Squirtle).
-![Bulbasaur](/public/images/bulbasaur.png)
-![Charmander](/public/images/Charmander.png)
-![Squirtle](/public/images/squirtle.png)
+<img src="/public/images/bulbasaur.png" width="350" alt="Bulbasaur">
+<img src="/public/images/Charmander.png" width="350" alt="Charmander">
+<img src="/public/images/squirtle.png" width="350" alt="Squirtle">
 
 This project has been made with HTML, CSS and Javascript
 
