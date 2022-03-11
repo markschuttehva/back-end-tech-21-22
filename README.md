@@ -1,6 +1,4 @@
-# back-end-tech-21-22
-_ Back end repo for block tech 2021-2022 _
-
+# Project Tech-21-22
 This is the back-end repo for my block tech project. In this project you can register and login to my site.
 This site is about searching for someone that likes the same starter pokemon.
 You can pick between the first gen starter pokemons (Bulbasaur, Charmander and Squirtle).
@@ -30,7 +28,12 @@ Run start to finish installing this project
 npm run start
 ```
 
-## license
+For developers
+```
+npm run dev
+```
+
+## License
 ```
 [Mit](./LICENSE.txt) voor de licentie
 ```
