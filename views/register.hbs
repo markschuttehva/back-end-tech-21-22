@@ -1,13 +1,14 @@
     <head>
-        <script defer src="/controllers/register.js"></script>
+        <script src="js/checkfilled.js" defer></script>
+        <script src="js/validatepw.js" defer></script>
     </head>
     <h1>Register</h1>
     <form action="/register" method="POST" id="form">
-        <input type="text" name="name" id="name" placeholder="name" required>
-        <input type="email" name="email" id="email" placeholder="Email" required>
-        <input type="date" name="date" id="date" max="2000-01-01" placeholder="dd-mm-jjjj" required>
-        <input type="password" name="password" id="password" placeholder="password" required>
-        <input type="password" name="password2" id="password2" placeholder="password" required>
+        <input type="text" name="name" id="name" placeholder="name" class="register-input">
+        <input type="email" name="email" id="email" placeholder="Email" class="register-input">
+        <input type="date" name="date" id="date" max="2002-01-01" placeholder="dd-mm-jjjj" class="register-input">
+        <input type="password" name="password" id="password" placeholder="password" class="register-input password">
+        <input type="password" name="password2" id="password2" placeholder="password" class="register-input password" onblur="validate()">
         <section class="select">
             <h2>Select a pokemon</h2>
             <input type="radio" name="pokemon" value="Bulbasaur" id="bulbasaur">
@@ -23,6 +24,6 @@
                 <img src="images/squirtle.png" alt="squirtle">
             </label>     
         </section>
-        <button type="submit" class="submit">Register</button>
+        <button type="submit" class="submit" id="submit">Register</button>
     </form>
     <a href="/login">Login</a>

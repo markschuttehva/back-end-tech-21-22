@@ -1,12 +1,12 @@
 <head>
-    <script src="/controllers/check.js"></script>
+    <script src="js/checkfilled.js" defer></script>
 </head>
 <main class="login">
     <h1>Sign in</h1>
     <form action="login" method="POST">
-        <input type="email" name="email" id="username" placeholder="Email">
-        <input type="password" name="password" id="password" placeholder="password">
-        <input type="submit" value="Login" onclick="validate()">
+        <input type="email" name="email" id="username" placeholder="Email" onblur="blur()" class="login-input">
+        <input type="password" name="password" id="password" placeholder="password" class="login-input">
+        <input type="submit" value="Login">
     </form>
    <p>Not yet a member? <a href="/register">Click here to Register</a></p>
 </main>
