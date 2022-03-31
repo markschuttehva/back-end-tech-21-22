@@ -46,6 +46,7 @@ Distributed under the [Mit](/LICENSE). See LICENSE.txt for more information.
 - Check to see if the passwords are the same.
 - Check to see if every field has been filled.
 - Check to see if someone is the right age (18+).
+- Connection webapi pokemon (https://pokeapi.co/)
 
 ### Back-end
 - Register
