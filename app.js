@@ -137,7 +137,7 @@ async function onRegister (req, res) {
     console.log(dataSquirtle.sprites.front_default);
 
     res.render('register', {
-        //Verstuur de data naar register form
+        //Verstuur de data naar register form.
         bulbasaur: dataBulbasaur,
         charmander: dataCharmander,
         squirtle: dataSquirtle
@@ -190,5 +190,6 @@ app.listen(PORT, () => {
 /* linkjes
 https://handlebarsjs.com/installation/#npm-or-yarn-recommended
 https://expressjs.com/
+https://pokeapi.co/docs/v2
 */
 
