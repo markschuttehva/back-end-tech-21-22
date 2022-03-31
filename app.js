@@ -2,6 +2,8 @@
 const express = require('express');
 const app = express();
 const bcrypt = require('bcrypt');
+//voor de webapi
+const fetch = require('node-fetch');
 /* bcrypt voor het versleutelen van wachtwoorden
 https://www.youtube.com/watch?v=hh45sR9WNH8&ab_channel=ChristianHur
 https://github.com/ChristianHur/152-150-Web-Programming-2/tree/master/unit6
@@ -21,7 +23,7 @@ app.use(express.urlencoded({ extended: false}))
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();  
 }
- 
+
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL)
 // const db = mongoose.connection;
@@ -117,8 +119,29 @@ function onAbout (req, res) {
     res.render('about');
 }
 
-function onRegister (req, res) {
-    res.render('register');
+async function onRegister (req, res) {
+    //voor de apifunctie
+    //Fetch de gegevens van alleen 1 pokemon, in dit geval bulbasaur
+    //Gegevens zijn van alles en nogwat (afbeeldingen, moves, generatie en nog meer)
+    const responseBulbasaur = await fetch("https://pokeapi.co/api/v2/pokemon/bulbasaur");
+    const responseCharmander = await fetch("https://pokeapi.co/api/v2/pokemon/charmander");
+    const responseSquirtle = await fetch("https://pokeapi.co/api/v2/pokemon/squirtle");
+    //Wacht totdat gegevens geladen zijn
+    const dataBulbasaur = await responseBulbasaur.json();
+    const dataCharmander = await responseCharmander.json();
+    const dataSquirtle = await responseSquirtle.json();
+
+    //Kijken of de image meegaat
+    console.log(dataBulbasaur.sprites.front_default);
+    console.log(dataCharmander.sprites.front_default);
+    console.log(dataSquirtle.sprites.front_default);
+
+    res.render('register', {
+        //Verstuur de data naar register form
+        bulbasaur: dataBulbasaur,
+        charmander: dataCharmander,
+        squirtle: dataSquirtle
+    });
 }
 
 /* async wordt gebruikt omdat het een await bevat hierdoor kan het verder met de code*/ 

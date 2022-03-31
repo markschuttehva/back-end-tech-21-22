@@ -29,6 +29,7 @@
     "heroku": "^7.33.3",
     "mongodb": "^4.4.0",
     "mongoose": "^6.2.5",
+    "node-fetch": "^2.6.6",
     "nodemon": "^2.0.15"
   },
   "devDependencies": {
